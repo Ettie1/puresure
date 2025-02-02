@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
+
+    <title>Policyholders</title>
+</head>
+<body>
+    <h1>Policyholders</h1>
+
+    <table style="table-layout: fixed;">
+        <thead>
+            <th>Title</th><th>Firstname</th><th>Lastname</th><th>Age</th>
+        </thead>
+        <tbody>
+            <% for (const ph of appDat) {%>
+               <td><%= ph.Title %></td><td><%= ph.Firstname %></td><td><%= ph.Lastname %></td><td><%= ph.Age %></td>   <!--<td>ph.Firstname</td><td>ph.Lastname</td><td>ph.Age</td>  -->
+            <%} %>            
+        </tbody>
+    </table>
+
+</body>
+</html>

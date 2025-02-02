@@ -8,6 +8,7 @@ const session = require('express-session')
 
 
 
+var appRouter = require('./routes/appRouter')
 var loginsignupRouter = require('./routes/loginsignupRouter')
 var pureRouter = require('./routes/pureRouter')
 var indexRouter = require('./routes/index');
@@ -32,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use('/app', appRouter)
 app.use('/loginsignup', loginsignupRouter)
 app.use('/', pureRouter);
 //app.use('/', indexRouter);

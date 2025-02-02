@@ -2,7 +2,7 @@ const express = require('express');
 const session =require('express-session')
 const router = express.Router();
 const mysql = require('mysql')
-require('dotenv').config()
+//require('dotenv').config()
 const app = express()
 
 //const mycss = require('bootstrap')
@@ -13,20 +13,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
  }))
+const con = require('../dat/mysqlconn')
 
 
-const con = mysql.createConnection({
-    host: process.env.Host,
-    port: process.env.Port,
-    user: process.env.User,
-    password: process.env.Password,
-    database: process.env.Database,
-    charset: 'utf8',
-    debug: true,
-
-
-stringifyObjects: true
-})
 
 router.get('/', (req, res)=>{
     //console.log(req.params.username);
@@ -53,7 +42,8 @@ router.post('/', (req, res)=>{
         if(auser.Password == req.body.password)
         {
             var message = "Pure - Clear Insurance - Pure Assurance - Peace of mind - Parts insurance - Quick and easy cover";
-            res.render('pure', {loggeduser: `Welcome back ${ auser.Username}`, msg: message})
+            //res.render('pure', {loggeduser: `Welcome back ${ auser.Username}`, msg: message})
+            res.redirect('/app')
         }
 
         res.render('loginsignup/login', {logmsg:'Invalid username or password'})
