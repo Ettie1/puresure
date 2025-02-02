@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.css"/>
+    <title>Document</title>
+<style>
+    /* body{
+        background-image: url('/images/glassfilled.jpg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 15px;
+        filter:brightness(100%);
+    } */
+
+    
+    #logopt{
+        background-color: lightgreen;
+        margin-top: 200px;
+    }
+    #signopt{
+        background-color: lightblue;
+    }
+    .divOptComm{
+        position: relative;
+        width: 250px;
+        margin: auto;
+        display: flex;
+        text-align: center;
+        padding: 25px;
+    }
+    .divOptComm h1{
+        width: fit-content;
+        margin: auto;
+        color: purple;
+    }
+    .divOptComm span{
+        border: 2px solid navy;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        margin-right: 10px;
+        /* position: relative; */
+    }
+    #bPanel{
+       /* border: 2px solid black; */
+    }
+    #bImage{
+       position: absolute;
+        top: 15px;
+        left: 300px;
+        opacity: .09;
+    }
+</style>
+</head>
+<body>
+    
+    <div id="bPanel">
+
+        <img id="bImage" src="/images/glassfilled.jpg"/>
+    <a href="/loginsignup">
+    <div id="logopt" class="divOptComm">
+        <span style="font-size: 50px;" class="fa fa-sign-in"></span>
+        <h1>LOGON</h1>
+    </div>
+    </a>
+    <a href="/loginsignup/signup">
+    <div id="signopt" class="divOptComm">
+        <span style="font-size: 50px;" class="fa fa-user"></span>
+        <h1>SIGNUP</h1>
+    </div>
+    </a>
+    
+    </div>
+</body>
+</html>

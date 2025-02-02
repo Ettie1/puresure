@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="/stylesheets/pure.css" />
+    
     <title>Pure</title>
 </head>
 <body>
+<nav style="position: relative; float: right;">
+    <h3><%=  loggeduser %></h3>
+    <button class="btn btn-outline-primary">Signup</button>
+    <button class="btn btn-outline-primary">Login</button>
+</nav>
     <marquee>
-    <h1>Welcome to pure</h1>
+        <h3 style="word-spacing: 15px; letter-spacing: 5px; text-shadow: 2px 2px 5px black;"><%=  msg %></h3>
     </marquee>
+    
+    <h1 class="h1center">Pure</h1>
+    <div class="mainImagePanel">
+        <a href="loginsignup/logsignopt">
+        <img src="/images/glassfilled.jpg" alt="glass filled with clear pure water" />
+        </a>
+
+    </div>
 </body>
 </html>

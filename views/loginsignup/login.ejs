@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/stylesheets/login.css"/>
+    <title>Login</title>
+</head>
+<body>
+    <h1 id="mHead">Login</h1>
+
+    <h3><%= logmsg %></h3>
+
+    <form action="/loginsignup" method="post">
+        <div id="pnlLogin">
+            <div class="form-control">
+                <div class="iback">
+                <span class="fa fa-user" style="font-size: 24px;"></span>
+                </div>
+                <label for="username">Username</label>
+                
+                <input name="username" class="form-control" name="username"/>
+            </div>
+            <div class="form-control">
+                <div class="iback">
+                <span class="fa fa-lock" style="font-size: 24px;"></span>
+                </div>
+                <label for="password">Password</label>
+                
+                <input name="password" type="password" class="form-control" name="password"/>
+            </div>
+            <input type="submit" value="Login" class="btn btn-outline-primary">
+            <a class="btn btn-outline-danger">Cancel</a>
+        </div>
+    </form>
+    
+
+</body>
+</html>
