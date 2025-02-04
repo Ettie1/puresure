@@ -13,6 +13,19 @@
     <form action="/loginsignup/signup" method="post">
         <div id="pnlLogin">
             
+            <div class="form-control">
+                <!-- <div class="iback">
+                <span class="fa fa-user" style="font-size: 24px;"></span>
+                </div> -->
+                <label for="title">Title</label>
+                
+                <select class="form-control" name="title" required>
+                    <option>Select a title</option>
+                    <option>Mr</option>
+                    <option>Ms</option>
+                </select>
+                
+            </div>
             
             <div class="form-control">
                 <!-- <div class="iback">
@@ -28,7 +41,7 @@
                 </div> -->
                 <label for="lastname">Lastname</label>
                 
-                <input name="lastname" type="password" class="form-control" name="lastname"/>
+                <input name="lastname" type="text" class="form-control" name="lastname"/>
             </div>
 
             <div class="form-control">

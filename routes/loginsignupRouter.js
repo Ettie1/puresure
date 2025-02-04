@@ -64,6 +64,8 @@ router.get('/signup', (req, res)=>{
 })
 
 router.post('/signup', (req, res)=>{
+    if(req.body.title === "Select a title") res.redirect('/loginsignup/signup')
+
     con.query(`INSERT INTO Signup(Firstname, Lastname, Email, Username, Password)values('${req.body.firstname}','${req.body.lastname}','${req.body.email}','${req.body.username}','${req.body.password}')`)
     con.query(`INSERT INTO User(Username, Password)values('${req.body.username}','${req.body.password}')`)
     res.redirect('/loginsignup')
