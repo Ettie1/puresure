@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/pure.css"/>
+    <title>Add Policyholder</title>
+</head>
+<body>
+    <h1 class="mHead">Add Policyholder</h1>
+
+    <div class="pnlMain">
+        <form action="/app/addpolicyholder" method="post">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <select name="title" class="form-control">
+                    <option>Select a gender</option>
+                    <option>Mr</option>
+                    <option>Ms</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="firstname">Firstname</label>
+                <input name="firstname" class="form-control"/>
+            </div>
+
+            <div class="form-control">
+                <label for="lastname">Lastname</label>
+                <input name="lastname" class="form-control"/>
+            </div>
+
+            <div class="form-control">
+                <label for="age">Age</label>
+                <input name="age" class="form-control"/>
+            </div>
+
+            <!-- <div>
+                <label for="firstname">Firstname</label>
+                <input name="firstname" class="form-control"/>
+            </div> -->
+
+            <div style="margin-top: 25px;">
+                <input type="submit" value="Save" class="btn btn-outline-primary"/>
+                <a href="/app" class="btn btn-outline-warning">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

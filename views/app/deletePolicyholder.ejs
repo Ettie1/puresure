@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/pure.css"/>
+    <script type="text/javascript" src="/javascripts/jquery/dist/jquery.js"></script>
+    <title>Delete Policyholder</title>
+</head>
+<body>
+    <div class="pnlMain">
+        <h1 class="mHead">Delete Policyholder</h1>
+
+        <div>
+            <label for="txtSearch">Search</label>
+            <input name="txtsearch" class="form-control"/>
+            <button id="btnSearch" class="btn btn-outline-primary">Search</button>
+            
+        </div>
+        
+    </div>
+    <div id="res">
+
+    </div>
+    <script>
+        $(()=>{
+            let txtsearch = $("#txtsearch");
+            let res = document.getElementById("res");
+            const btnSearch = $("#btnSearch");
+            btnSearch.click((evt)=>{
+                //evt.preventDefault();
+
+                $.ajax({
+                    url: `getph/?lastname=${txtsearch.text()}`,
+                    method: "get",
+                    success: (xhr, err)=>{
+                        //console.log("success")
+                        //res.html(xhr)
+                        // res.innerHTML += xhr;
+                        // res.innerHTML += err;
+                        res.innerHTML += "Success"
+                    },
+                    error: (msg, err, errno)=>{
+                        //console.log(xhr)
+                        // console.log(err)
+                        // res.html(xhr)
+                        //console.log("error")
+                        // res.html("error")
+                        res.innerHTML += "Error"
+                    }
+                }, false);
+
+            })
+        })
+    </script>
+
+
+</body>
+</html>
