@@ -44,11 +44,13 @@ router.get('/deletepolicyholder', (req, res)=>{
 // router.post('/deletepolicyholder')
 
 router.get('/getph/:lastname', (req, res)=>{
-    con.query(`SELECT * FROM Policyholder WHERE Lastname = '${req.params.lastname}'`,
+    con.query(`SELECT * FROM Policyholder WHERE Lastname = '${req.params['lastname']}'`,
         (error, result, fields)=>{
             if(error) throw error
 
-            return JSON.stringify(result)
+            if(result == typeof(Array)) res.end(JSON.stringify(result))
+
+            res.end(result)
         })
 })
 

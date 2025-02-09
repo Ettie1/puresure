@@ -14,32 +14,51 @@
 
         <div>
             <label for="txtSearch">Search</label>
-            <input name="txtsearch" class="form-control"/>
+            <input id="txtsearch" name="txtsearch" class="form-control"/>
             <button id="btnSearch" class="btn btn-outline-primary">Search</button>
             
         </div>
         
     </div>
-    <div id="res">
+    <table >
+        <thead>
+            <th>Id</th><th>Title</th><th>Firstname</th><th>Lastname</th>
+        </thead>
+        <tbody id="res">
 
-    </div>
+        </tbody>
+    </table>
     <script>
         $(()=>{
-            let txtsearch = $("#txtsearch");
+            //let txtsearch = $("#txtsearch");
+            let txtsearch = document.getElementById("txtsearch")
             let res = document.getElementById("res");
             const btnSearch = $("#btnSearch");
             btnSearch.click((evt)=>{
                 //evt.preventDefault();
 
                 $.ajax({
-                    url: `getph/?lastname=${txtsearch.text()}`,
+                    url: `getph/?lastname=${txtsearch.value}`,
                     method: "get",
+                    data: "",
                     success: (xhr, err)=>{
                         //console.log("success")
                         //res.html(xhr)
                         // res.innerHTML += xhr;
                         // res.innerHTML += err;
-                        res.innerHTML += "Success"
+                        //res.innerHTML += "Success"
+                        //res.innerHTML += xhr
+                        
+                        let dat = JSON.parse(xhr)
+                        
+                        res.innerHTML += `<tr><td>${xhr.PolicyholderId}</td><td>${xhr.Title}</td><td>${xhr.Firstname}</td><td>${xhr.Lastname}</td> </tr>`
+
+                        // dat.forEach(p => {
+                        //     // res.innerHTML += p.PolicyholderId + " " + p.Title + " " + p.Firstname + " " + p.Lastname +"<br>"
+
+                        //     res.innerHTML += `<tr><td>${p.PolicyholderId}</td><td>${p.Title}</td><td>${p.Firstname}</td><td>${p.Lastname}</td> </tr>`
+                        // });
+                        
                     },
                     error: (msg, err, errno)=>{
                         //console.log(xhr)
